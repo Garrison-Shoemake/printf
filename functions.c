@@ -79,3 +79,28 @@ int printpercent(va_list input __attribute__((unused)), int count)
 	count++;
 	return (count);
 }
+int printb(va_list input, int count)
+{
+	/* unsigned int b is ui value */
+	unsigned int b = va_arg(input, unsigned int);
+	/* anticipating longer ouptup creating buffer ?? malloc?? */
+	int array[25];
+	int loop, i = 0;
+
+	while (b != 0)
+	{
+	/* at array index place zero store value of first modulo */
+	/* adding 48 converts to ascii -- 48 == 0 */
+	array[i] = (b % 2) + 48;
+	/* continue to modulo remainder values */
+	b = b / 2;
+	i++;
+	}
+
+	for (loop = (i - 1); loop >= 0; loop--)
+	{
+		_putchar(array[loop]);
+		count++;
+	}
+	return (count);
+}
