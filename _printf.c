@@ -1,50 +1,49 @@
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
 /**
  *
  *
  */
 
-
-
-//helper here//
-
-
-
 int _printf(const char *format, ...)
 {
-	va_list input;
 	int count = 0;
-	unsigned int i = 0;
-	unsigned int j;
-	dt dtstruct[] =
-	{
-		{"d", printi},
-		{"i", printi},
-		{"s", prints},
-		{"c", printc},
-		{"n", printn},
-		{NULL, NULL},
-	}
+	int j, i = 0;
+	va_list input; 
+	dt specs[] = {
+		/*{'d', printdi},*/
+		/*{'i', printdi},*/
+		{'s', prints},
+		{'c', printc},
+	/*	{'n', printn}, */
+		{'\0', NULL}
+	};
 
 	va_start(input, format);
 
-	while (format && format[i])
+	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == "%" || format[i] == "\\")
+		if (format[i] == '%')
 		{
 			j = 0;
-			while (dtstruct[j].specifier)
+			while (specs[j].specifier != '\0')
 			{
-				//("%c\n", 'H')
-				if(dtstruct[j].specificer[0] == format[i+1])
+				if(specs[j].specifier == format[i+1])
 				{
-					count = dtstruct[j].formtype(input, count);
+					count = specs[j].formtype(input, count);
+					i++;
 				}
-			}
 			j++;
+			}
+			
 		}
-		_putchar(input[i]);
+		else
+		{
+		_putchar(format[i]);
 		count++;
+		}
 		i++;
 	}
 	va_end(input);
