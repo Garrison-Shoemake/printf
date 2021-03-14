@@ -11,13 +11,13 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 	int j, i = 0;
-	va_list input; 
+	va_list input;
 	dt specs[] = {
-		/*{'d', printdi},*/
-		/*{'i', printdi},*/
+		{'d', printdi},
+		{'i', printdi},
 		{'s', prints},
 		{'c', printc},
-	/*	{'n', printn}, */
+		{'%', printpercent},
 		{'\0', NULL}
 	};
 
@@ -37,7 +37,6 @@ int _printf(const char *format, ...)
 				}
 			j++;
 			}
-			
 		}
 		else
 		{

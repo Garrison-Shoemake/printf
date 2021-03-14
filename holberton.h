@@ -18,6 +18,6 @@ int _printf(const char *format, ...);
 int printdi(va_list input, int count);
 int printc(va_list input, int count);
 int prints(va_list input, int count);
-int printn(va_list input, int count);
+int printpercent(va_list input, int count);
 
 #endif
