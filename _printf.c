@@ -10,15 +10,11 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	int j, i = 0;
+	int count = 0, i = 0, j;
 	va_list input;
 	dt specs[] = {
-		{'d', printdi}, {'i', printdi},
-		{'s', prints}, {'c', printc},
-		{'%', printpercent},
-		{'b', printb},
-		{'\0', NULL}
+		{'d', printdi}, {'i', printdi}, {'s', prints}, {'c', printc}, {'b', printb},
+		{'%', printpercent}, {'\0', NULL}
 	};
 
 	if (format == NULL)
@@ -36,6 +32,7 @@ int _printf(const char *format, ...)
 				{
 					count = specs[j].formtype(input, count);
 					i++;
+					break;
 				}
 			j++;
 			}
@@ -48,5 +45,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(input);
+	printf("%d\n", count);
 	return (count);
 }
