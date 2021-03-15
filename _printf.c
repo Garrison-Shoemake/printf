@@ -3,8 +3,9 @@
 #include <stdlib.h>
 #include <stdarg.h>
 /**
- *
- *
+ * _printf - variadic function analyzes and prints arguments to stdout
+ * @format: given input to be analyzed by _printf
+ * Return: int (count)
  */
 
 int _printf(const char *format, ...)
@@ -31,7 +32,7 @@ int _printf(const char *format, ...)
 			j = 0;
 			while (specs[j].specifier != '\0')
 			{
-				if(specs[j].specifier == format[i+1])
+				if (specs[j].specifier == format[i + 1])
 				{
 					count = specs[j].formtype(input, count);
 					i++;
@@ -47,5 +48,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(input);
-	return(count);
+	return (count);
 }

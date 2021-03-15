@@ -3,14 +3,17 @@
 #include <stdlib.h>
 #include <stdarg.h>
 /**
- *
- *
+ * printdi - prints base ten number / integer
+ * @input: arguments passed to printf function
+ * @count: integer that increments with every character printed to stdout
+ * Return: int (count)
  */
 int printdi(va_list input, int count)
 {
 	int i = va_arg(input, int);
 	int m = 1000000000;
 	int print;
+
 	if (i < 0)
 	{
 		_putchar('-');
@@ -36,7 +39,7 @@ int printdi(va_list input, int count)
 			{
 				/* this loop accounts for 0 values*/
 				_putchar('0' + 0);
-				m = m /10;
+				m = m / 10;
 				count++;
 			}
 		}
@@ -49,22 +52,31 @@ int printdi(va_list input, int count)
 	return (count);
 }
 /**
+ * printc - printcs single character
+ * @input: arguments passed to printf function
+ * @count: integer that increments with every character printed to stdout
+ * Return: int (count)
  */
 int printc(va_list input, int count)
 {
 	char x = (char)va_arg(input, int);
+
 	_putchar(x);
 	count++;
 
 	return (count);
 }
 /**
+ * prints - prints string of characters
+ * @input: arguments passed to printf function
+ * @count: integer that increments with every character printed to stdout
+ * Return: int (count)
  */
 int prints(va_list input, int count)
 {
 	int i = 0;
-
 	char *c = va_arg(input, char *);
+
 	while (c[i] != '\0')
 	{
 		_putchar(c[i]);
@@ -73,12 +85,24 @@ int prints(va_list input, int count)
 	}
 	return (count);
 }
+/**
+ * printpercent - prints '%'
+ * @input: arguments passed to printf function
+ * @count: integer that increments with every character printed to stdout
+ * Return: int (count)
+ */
 int printpercent(va_list input __attribute__((unused)), int count)
 {
 	_putchar('%');
 	count++;
 	return (count);
 }
+/**
+ * printb - takes unsigned int argument, and converts it to binary
+ * @input: arguments passed to printf function
+ * @count: integer that increments with every character printed to stdout
+ * Return: int (count)
+*/
 int printb(va_list input, int count)
 {
 	/* unsigned int b is ui value */
