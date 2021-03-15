@@ -60,9 +60,12 @@ int printdi(va_list input, int count)
 int printc(va_list input, int count)
 {
 	char x = (char)va_arg(input, int);
-
+	
+	if (x != '\0')
+	{
 	_putchar(x);
 	count++;
+	}
 
 	return (count);
 }
@@ -77,12 +80,16 @@ int prints(va_list input, int count)
 	int i = 0;
 	char *c = va_arg(input, char *);
 
+	if (c != '\0')
+	{
 	while (c[i] != '\0')
 	{
 		_putchar(c[i]);
 		count++;
 		i++;
 	}
+	}
+
 	return (count);
 }
 /**
