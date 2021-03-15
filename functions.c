@@ -110,7 +110,9 @@ int printb(va_list input, int count)
 	/* anticipating longer ouptup creating buffer ?? malloc?? */
 	int array[25];
 	int loop, i = 0;
-
+	
+	if (b != '\0')
+	{
 	while (b != 0)
 	{
 	/* at array index place zero store value of first modulo */
@@ -126,5 +128,7 @@ int printb(va_list input, int count)
 		_putchar(array[loop]);
 		count++;
 	}
+	}
+	
 	return (count);
 }
