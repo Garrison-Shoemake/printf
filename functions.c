@@ -13,6 +13,9 @@ int printdi(va_list input, int count)
 	int i = va_arg(input, int);
 	int m = 1000000000;
 	int print;
+	
+	if (input == NULL)
+		return (count);
 
 	if (i < 0)
 	{
