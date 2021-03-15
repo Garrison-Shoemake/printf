@@ -29,8 +29,6 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (input == NULL)
-				return (0);
 			j = 0;
 			while (specs[j].specifier != '\0')
 			{
@@ -50,6 +48,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(input);
-	printf("%d\n", count);
 	return (count);
 }
