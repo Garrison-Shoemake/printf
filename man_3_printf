@@ -1,0 +1,11 @@
+.TH "_printf" "1" "March 15, 2021" "_printf man pag"
+.hy
+.SH NAME
+.PP
+_printf - prints arguments given to format
+.SH SYNOPSIS
+.PP
+.SH DESCRIPTION
+.PP
+Function _printf prints arguments based on format specifier indicated by '%' in format.
+.SH

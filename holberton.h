@@ -5,6 +5,9 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
+ * struct datatype - checks format specifiers, assigns appropriate function
+ * @specifier: character given via input, indicates data type to be printed
+ * @formtype: function based on @specifier
  */
 typedef struct datatype
 {
