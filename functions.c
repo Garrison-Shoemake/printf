@@ -60,7 +60,7 @@ int printdi(va_list input, int count)
 int printc(va_list input, int count)
 {
 	char x = (char)va_arg(input, int);
-	
+
 	if (x != '\0')
 	{
 	_putchar(x);
@@ -117,7 +117,7 @@ int printb(va_list input, int count)
 	/* anticipating longer ouptup creating buffer ?? malloc?? */
 	int array[25];
 	int loop, i = 0;
-	
+
 	if (b != '\0')
 	{
 	while (b != 0)
@@ -136,6 +136,6 @@ int printb(va_list input, int count)
 		count++;
 	}
 	}
-	
+
 	return (count);
 }
