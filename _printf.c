@@ -14,10 +14,8 @@ int _printf(const char *format, ...)
 	int j, i = 0;
 	va_list input;
 	dt specs[] = {
-		{'d', printdi},
-		{'i', printdi},
-		{'s', prints},
-		{'c', printc},
+		{'d', printdi}, {'i', printdi},
+		{'s', prints}, {'c', printc},
 		{'%', printpercent},
 		{'b', printb},
 		{'\0', NULL}
@@ -25,9 +23,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(input, format);
-
 	while (format != NULL && format[i] != '\0')
 	{
 		if (format[i] == '%')
