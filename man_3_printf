@@ -1,11 +1,51 @@
-.TH "_printf" "1" "March 15, 2021" "_printf man pag"
+
+.TH _printf man page "1.0" "March 2021" "Holberton School C14"
 .hy
 .SH NAME
 .PP
-_printf - prints arguments given to format
+.B _printf 
+- prints arguments given to format
 .SH SYNOPSIS
 .PP
+ 
+#include "holberton.h"
+
+int _printf(const char *format,...)
+
 .SH DESCRIPTION
 .PP
-Function _printf prints arguments based on format specifier indicated by '%' in format.
-.SH
+The _printf function writes to standard output.
+.I Format specifiers
+, notated by a preceding '%',  determine how _printf will handle arguments of various data types.
+
+Return: _printf returns an integer value of characters printed to standar ouptut, excluding the null byte.
+
+.SH EXAMPLES
+
+.RS 0
+.B %c
+prints character
+
+.RS 0
+.B %s
+prints a string
+
+.RS 0
+.B %d
+formats and prints a number of data type int
+
+.RS 0
+.B %i
+formats and prints a number of data type int
+
+.RS 0
+.B %b
+formats and prints a number in binary
+
+
+.SH SEE ALSO
+printf(3): formatted output conversion - Linux man page
+.SH BUGS
+No known bugs
+.SH AUTHORED BY
+.B Garrison Shoemake + Chris Vanndy
