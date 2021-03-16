@@ -20,21 +20,25 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(input, format);
-
 	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
-			j = 0;
-			while (specs[j].specifier != '\0')
+			for (j = 0; specs[j].specifier != '\0'; j++)
 			{
-				if (specs[j].specifier == format[i + 1])
+			        if (specs[j].specifier == format[i + 1])
 				{
 					count = specs[j].formtype(input, count);
-					i++;
-					break;
+                                        i++;
+                                        break;
 				}
-			j++;
+				else if (specs[j].specifier == '%')
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					count++;
+					i++;
+				}
 			}
 		}
 		else
