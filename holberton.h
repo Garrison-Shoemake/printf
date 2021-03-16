@@ -23,4 +23,9 @@ int printc(va_list input, int count);
 int prints(va_list input, int count);
 int printpercent(va_list input, int count);
 int printb(va_list input, int count);
+int p_oct(va_list args, int count);
+int p_ui(va_list args, int count);
+int p_heX(va_list args, int count);
+int p_hex(va_list args, int count);
+
 #endif

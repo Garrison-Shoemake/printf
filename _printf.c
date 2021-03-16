@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	dt specs[] = {
 		{'d', printdi}, {'i', printdi}, {'s', prints}, {'c', printc}, {'b', printb},
+		{'o', p_oct}, {'u', p_ui}, {'x', p_hex}, {'X', p_heX}, 
 		{'%', printpercent}, {'\0', NULL}
 	};
 
@@ -36,8 +37,7 @@ int _printf(const char *format, ...)
 				{
 					_putchar(format[f_index]);
 					_putchar(format[f_index + 1]);
-					count++;
-					f_index++;
+					count++, f_index++;
 				}
 			}
 		}
