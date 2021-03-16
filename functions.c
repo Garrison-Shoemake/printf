@@ -4,7 +4,7 @@
 #include <stdarg.h>
 /**
  * printdi - prints base ten number / integer
- * @input: arguments passed to printf function
+ * @args: arguments passed to printf function
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
  */
@@ -48,7 +48,7 @@ int printdi(va_list args, int count)
 }
 /**
  * printc - printcs single character
- * @input: arguments passed to printf function
+ * @args: arguments passed to printf function
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
  */
@@ -66,7 +66,7 @@ int printc(va_list args, int count)
 }
 /**
  * prints - prints string of characters
- * @input: arguments passed to printf function
+ * @args: arguments passed to printf function
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
  */
@@ -89,7 +89,7 @@ int prints(va_list args, int count)
 }
 /**
  * printpercent - prints '%'
- * @input: arguments passed to printf function
+ * @args: arguments passed to printf function
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
  */
@@ -101,7 +101,7 @@ int printpercent(va_list args __attribute__((unused)), int count)
 }
 /**
  * printb - takes unsigned int argument, and converts it to binary
- * @input: arguments passed to printf function
+ * @args: arguments passed to printf function
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
 */

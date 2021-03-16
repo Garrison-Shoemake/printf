@@ -24,14 +24,14 @@ int p_heX(va_list args, int count)
 
 		ascii[i] = rem;
 		i++;
-		hex = hex/16;
+		hex = hex / 16;
 	}
-	
-	for ( i = (i - 1); i >= 0; i--)
+
+	for (i = (i - 1); i >= 0; i--)
 	{
 		_putchar(ascii[i]);
 		count++;
 	}
-			
-	return (count);		
+
+	return (count);
 }
