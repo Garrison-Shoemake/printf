@@ -29,3 +29,8 @@
 ###***Binary Conversion***
 -Input:`_printf("The equivalent to 30 in binary is: %b", 30);`
 -Output:`The equivalent to 30 in binary is: 11110`
+
+
+#Authors
+**Chris Vanndy** - [GitHub](https://github.com/chrisvanndy)
+**Garrison Shoemake** - [GitHub](https://github.com/Garrison-Shoemake)
