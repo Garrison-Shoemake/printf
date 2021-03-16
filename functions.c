@@ -8,9 +8,9 @@
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
  */
-int printdi(va_list input, int count)
+int printdi(va_list args, int count)
 {
-	int i = va_arg(input, int), m = 1000000000, print;
+	int i = va_arg(args, int), m = 1000000000, print;
 
 	if (i < 0)
 	{
@@ -52,9 +52,9 @@ int printdi(va_list input, int count)
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
  */
-int printc(va_list input, int count)
+int printc(va_list args, int count)
 {
-	char x = (char)va_arg(input, int);
+	char x = (char)va_arg(args, int);
 
 	if (x != '\0')
 	{
@@ -70,10 +70,10 @@ int printc(va_list input, int count)
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
  */
-int prints(va_list input, int count)
+int prints(va_list args, int count)
 {
 	int i = 0;
-	char *c = va_arg(input, char *);
+	char *c = va_arg(args, char *);
 
 	if (c != '\0')
 	{
@@ -93,7 +93,7 @@ int prints(va_list input, int count)
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
  */
-int printpercent(va_list input __attribute__((unused)), int count)
+int printpercent(va_list args __attribute__((unused)), int count)
 {
 	_putchar('%');
 	count++;
@@ -105,10 +105,10 @@ int printpercent(va_list input __attribute__((unused)), int count)
  * @count: integer that increments with every character printed to stdout
  * Return: int (count)
 */
-int printb(va_list input, int count)
+int printb(va_list args, int count)
 {
 	/* unsigned int b is ui value */
-	unsigned int b = va_arg(input, unsigned int);
+	unsigned int b = va_arg(args, unsigned int);
 	/* anticipating longer ouptup creating buffer ?? malloc?? */
 	int array[25];
 	int loop, i = 0;

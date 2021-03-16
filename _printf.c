@@ -10,8 +10,8 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0, i = 0, j;
-	va_list input;
+	int count = 0, f_index = 0, s_index;
+	va_list args;
 	dt specs[] = {
 		{'d', printdi}, {'i', printdi}, {'s', prints}, {'c', printc}, {'b', printb},
 		{'%', printpercent}, {'\0', NULL}
@@ -19,35 +19,35 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-	va_start(input, format);
-	while (format != NULL && format[i] != '\0')
+	va_start(args, format);
+	while (format != NULL && format[f_index] != '\0')
 	{
-		if (format[i] == '%' && format[i + 1])
+		if (format[f_index] == '%' && format[f_index + 1])
 		{
-			for (j = 0; specs[j].specifier != '\0'; j++)
+			for (s_index = 0; specs[s_index].specifier != '\0'; s_index++)
 			{
-			        if (specs[j].specifier == format[i + 1])
+			        if (specs[s_index].specifier == format[f_index + 1])
 				{
-					count = specs[j].formtype(input, count);
-                                        i++;
+					count = specs[s_index].formtype(args, count);
+                                        f_index++;
                                         break;
 				}
-				else if (specs[j].specifier == '%')
+				else if (specs[s_index].specifier == '%')
 				{
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
+					_putchar(format[f_index]);
+					_putchar(format[f_index + 1]);
 					count++;
-					i++;
+					f_index++;
 				}
 			}
 		}
 		else
 		{
-		_putchar(format[i]);
+		_putchar(format[f_index]);
 		count++;
 		}
-		i++;
+		f_index++;
 	}
-	va_end(input);
+	va_end(args);
 	return (count);
 }
