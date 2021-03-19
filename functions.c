@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <limits.h>
 /**
  * printdi - prints base ten number / integer
  * @args: arguments passed to printf function
@@ -61,6 +62,10 @@ int printc(va_list args, int count)
 	_putchar(x);
 	count++;
 	}
+	if (x == '\0')
+	{
+		_putchar(0);
+	}
 
 	return (count);
 }
@@ -77,14 +82,23 @@ int prints(va_list args, int count)
 
 	if (c != '\0')
 	{
-	while (c[i] != '\0')
+		while (c[i] != '\0')
+		{
+			_putchar(c[i]);
+			count++;
+			i++;
+		}
+	}
+	else if (c == '\0')
 	{
-		_putchar(c[i]);
+		_putchar(40);
+		_putchar(110);
+		_putchar(117);
+		_putchar(108);
+		_putchar(108);
+		_putchar(41);
 		count++;
-		i++;
 	}
-	}
-
 	return (count);
 }
 /**
