@@ -37,12 +37,12 @@ This ```_printf``` function writes to standard output. ***Format specifiers*** o
 
 **Octal Conversion**
 * Input: ```_printf("The number [30] converted to octal is: [%o]\n", 30);```
-* Output: ```The number [30] converted to octal is: [36]\n```
+* Output: ```The number [30] converted to octal is: [36]```
 
 **Hexadecimal Conversion**
 * Input: ```_printf("The number [30] converted to hexadecimal is [%x]\n");```
 * Output: ```The number [30] converted to hexadecimal is [1e]```
-  - *The ```%X``` conversion specifier's input is identical to ```%x```, but that it prints the output in capitals.
+  - _The ```%X``` conversion specifier's input is identical to ```%x```, but that it prints the output in capitals._
   - Input: ```_printf("The number [30] converted to hexadecimal is [%X]\n");```
   - Output: ```The number [30] converted to hexadecimal is [1E]```
 

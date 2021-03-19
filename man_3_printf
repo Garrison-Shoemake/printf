@@ -16,7 +16,7 @@ int _printf(const char *format,...)
 .PP
 The _printf function writes to standard output.
 .I Format specifiers
-, notated by a preceding '%',  determine how _printf will handle arguments of various data types.
+, notated by a preceding '%', determine how _printf will handle arguments of various data types.
 
 Return: _printf returns an integer value of characters printed to standar ouptut, excluding the null byte.
 
@@ -42,7 +42,22 @@ formats and prints a number of data type int
 .B %b
 formats and prints a number in binary
 
+.RS 0
+.B %u
+prints unsigned integer
 
+.RS 0
+.B %o
+formats and prints and octal number
+
+.RS 0
+.B %x 
+prints a hexadecimal number, alpha characters lower-case
+
+.RS 0
+.B %X 
+prints a hexadecimal number, alpha characters upper-case
+ 
 .SH SEE ALSO
 printf(3): formatted output conversion - Linux man page
 .SH BUGS
